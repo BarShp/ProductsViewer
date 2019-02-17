@@ -1,0 +1,26 @@
+<div id="queries">
+  <input autocomplete id="filterValue" [config]="{'placeholder': 'Filter products'}" [items]="this.autocomplete"
+    (inputChangedEvent)="onFilterValueChanged($event)" (selectEvent)="onFilterValueChanged($event)">
+  <button id="search" (click)="onSearch()">Search</button>
+  <label for="filterBy">Filter By</label>
+  <select id="filterBy" #filterBy class="custom-select" (change)="onFilterFieldChanged(filterBy.value)">
+    <option selected value="name">Name</option>
+    <option value="description">Description</option>
+  </select>
+  <label for="sortBy">Sort By</label>
+  <select id="sortBy" #sortBy class="custom-select" (change)="onSort(sortBy.value)">
+    <option selected value="name">Name</option>
+    <option value="price">Price</option>
+    <option value="description">Description</option>
+  </select>
+</div>
+
+<div id="productsGridContainer">
+  <pv-product-grid id="productsGrid" *ngIf="this.products" [products]="this.products"></pv-product-grid>
+</div>
+
+<h3 class="endOfGridText" *ngIf="this.loadingProducts"> Loading products... </h3>
+<h3 class="endOfGridText" *ngIf="this.endOfResults">You have seen all products.</h3>
+
+<div class="search-results" infiniteScroll [infiniteScrollDisabled]="this.endOfResults" [infiniteScrollDistance]="0.2"
+  (scrolled)="onScroll()"></div>

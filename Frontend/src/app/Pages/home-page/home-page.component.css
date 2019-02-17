@@ -1,0 +1,28 @@
+#queries{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#queries > *:not(:last-child), #filterValue, ::ng-deep ng2-input-autocomplete > div > input{
+    margin-right: 0.275rem;
+    height: 2.4rem;
+}
+
+.custom-select{
+    width: 8rem;
+}
+
+#productsGridContainer{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+#productsGrid{
+    grid-column-start: 2;    
+}
+
+.endOfGridText{
+    text-align: center;
+    margin-bottom: 1.3rem;
+}

@@ -1,0 +1,15 @@
+:host{
+    display: flex;
+    justify-content: center
+}
+
+.card {
+    width: 40rem;
+    min-height: 30rem;
+}
+
+#back {
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 1.275rem 0.275rem;
+}

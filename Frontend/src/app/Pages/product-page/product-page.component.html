@@ -1,0 +1,22 @@
+<!-- <div *ngIf="product$ | async as product">
+  <h3>"{{ product.name }}"</h3>
+  <span>
+    Product Details: {{ product.description }}
+  </span>
+  <span>
+    Price: ${{ product.price }}
+  </span>
+  <p>
+    <a routerLink="/">Back</a>
+  </p>
+</div> -->
+
+<div *ngIf="product$ | async as product" id="container" class="card">
+  <div class="card-body">
+    <h1 class="card-title">{{product.name}}</h1>
+    <p class="card-text">{{product.description}}</p>
+    <p class="card-text">Price: ${{product.price}}</p>
+    <a class="card-link" id="back" routerLink="/">Back</a>
+  </div>
+
+</div>

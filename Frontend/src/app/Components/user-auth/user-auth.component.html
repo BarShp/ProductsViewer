@@ -1,0 +1,11 @@
+<div id="logged" *ngIf="isLoggedIn; else showLogin">
+    <span>Connected as {{ this.userEmail }}</span>
+    <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+    <div id="login">
+        <input id="email" #email type="text" placeholder="Email" />
+        <input id="password" #password type="password" placeholder="Password" />
+        <button (click)="login(email.value, password.value)">Login</button>
+    </div>
+</ng-template>
