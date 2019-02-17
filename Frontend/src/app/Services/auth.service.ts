@@ -27,6 +27,16 @@ export class AuthService {
       }));
   }
 
+  public register(email, password) {
+    return this.http.post(this.BASE_URL + '/registerUser', { email: email, password: password }).map(
+      (res: Token) => {
+        if (res) {
+          localStorage.setItem(this.LOCAL_STORAGE_TOKEN_KEY, res.token);
+        }
+      }
+    );
+  }
+
   public login(email, password) {
     return this.http.post(this.BASE_URL + '/getToken', { email: email, password: password }).map(
       (res: Token) => {

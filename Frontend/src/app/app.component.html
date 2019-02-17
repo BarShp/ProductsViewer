@@ -1,3 +1,2 @@
 <h1 id="title">You have reached Products Viewer!</h1>
-<pv-user-auth [ngClass]="{'login':!this.isLoggedIn, 'logout':this.isLoggedIn}" (isLoggedInChange)="this.isLoggedIn = $event"></pv-user-auth>
-<router-outlet *ngIf="this.isLoggedIn"></router-outlet>
+<router-outlet></router-outlet>

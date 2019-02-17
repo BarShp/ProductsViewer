@@ -18,6 +18,8 @@ import { AuthService } from './Services/auth.service';
 
 import { routing } from './app.routing';
 import { UserAuthComponent } from './Components/user-auth/user-auth.component';
+import { RegisterPageComponent } from './Pages/register-page/register-page.component';
+import { LoginPageComponent } from './Pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { UserAuthComponent } from './Components/user-auth/user-auth.component';
     ProductGridComponent,
     HomePageComponent,
     ProductPageComponent,
-    UserAuthComponent
+    UserAuthComponent,
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

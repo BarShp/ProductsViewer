@@ -1,3 +1,4 @@
+<pv-user-auth (loggedOut)="onLoggedOut()"></pv-user-auth>
 <div id="queries">
   <input autocomplete id="filterValue" [config]="{'placeholder': 'Filter products'}" [items]="this.autocomplete"
     (inputChangedEvent)="onFilterValueChanged($event)" (selectEvent)="onFilterValueChanged($event)">

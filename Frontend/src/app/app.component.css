@@ -2,14 +2,3 @@
     text-align: center;
     margin: 3rem 0 7rem 0;
 }
-
-.login{
-    display: flex;
-    justify-content: center;
-}
-
-.logout{
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-}

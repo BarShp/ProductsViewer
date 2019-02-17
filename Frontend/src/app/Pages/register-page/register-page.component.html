@@ -1,0 +1,5 @@
+<div id="container">
+  <input id="email" #email type="text" placeholder="Email" />
+  <input id="password" #password type="password" placeholder="Password" />
+  <button (click)="register(email.value, password.value)">Register</button>
+</div>

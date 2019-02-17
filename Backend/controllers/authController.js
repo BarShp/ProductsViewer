@@ -11,12 +11,14 @@ module.exports = {
         UserModel.create({
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, saltRounds)
-        }, function (err, result) {
+        }, function (err, user) {
             if (err) {
                 res.status(500).send(err.message);
             }
             else {
-                res.json({ status: "success", message: "User added successfully!!!", data: null });
+                const payload = { id: user.id };
+                const token = jwt.sign(payload, process.env.PV_JWT_SECRET);
+                return res.send({ token: token });
             }
         });
     },

@@ -8,38 +8,18 @@ import { AuthService } from '../../Services/auth.service';
 })
 
 export class UserAuthComponent implements OnInit {
-  private isLoggedIn: boolean = false;
-
-  @Output() isLoggedInChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
+  @Output() loggedOut: EventEmitter<void> = new EventEmitter<void>();
   public userEmail: string;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.isLoggedIn().subscribe((res) => {
-      if (res) {
-        this.isLoggedIn = res;
-        this.isLoggedInChange.emit(this.isLoggedIn);
-        this.getEmail();
-      }
-    }, (error) => {
-      console.log('error', error);
-    });
-  }
-
-  public login(email, password) {
-    this.authService.login(email, password).subscribe(() => {
-      this.isLoggedIn = true;
-      this.isLoggedInChange.emit(this.isLoggedIn);
-      this.getEmail();
-    });
+    this.getEmail();
   }
 
   public logout() {
     this.authService.logout().subscribe(() => {
-      this.isLoggedIn = false;
-      this.isLoggedInChange.emit(this.isLoggedIn);
+      this.loggedOut.emit();
       this.userEmail = null;
     })
   }

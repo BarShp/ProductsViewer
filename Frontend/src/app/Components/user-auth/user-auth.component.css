@@ -1,3 +1,5 @@
-#login > *:not(:last-child){
-    margin-right: 0.4rem;
+:host{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
 }
