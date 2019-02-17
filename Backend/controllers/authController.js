@@ -48,6 +48,6 @@ module.exports = {
             });
     },
     getUser: (req, res, next) => {
-        return res.send(req.user);
+        return res.send({ email: req.user.email, _id: req.user._id });
     }
 }
