@@ -3,6 +3,10 @@
     justify-content: center;
 }
 
+#container {
+    display: flex;
+}
+
 #container > *:not(:last-child){
     margin-right: 0.4rem;
 }

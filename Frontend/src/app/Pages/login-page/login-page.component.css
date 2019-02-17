@@ -3,6 +3,10 @@
     justify-content: center;
 }
 
+#login {
+    display: flex;
+}
+
 #login > *:not(:last-child){
     margin-right: 0.4rem;
 }

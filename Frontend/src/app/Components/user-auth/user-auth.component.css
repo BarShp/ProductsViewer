@@ -1,5 +1,11 @@
-:host{
+#container{
     position: absolute;
     top: 2rem;
     right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#container > *:not(:last-child){
+    margin-right: 0.275rem;
 }

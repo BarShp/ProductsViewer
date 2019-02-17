@@ -2,7 +2,7 @@
 <div id="queries">
   <input autocomplete id="filterValue" [config]="{'placeholder': 'Filter products'}" [items]="this.autocomplete"
     (inputChangedEvent)="onFilterValueChanged($event)" (selectEvent)="onFilterValueChanged($event)">
-  <button id="search" (click)="onSearch()">Search</button>
+  <button type="button" class="btn btn-primary" id="search" (click)="onSearch()">Search</button>
   <label for="filterBy">Filter By</label>
   <select id="filterBy" #filterBy class="custom-select" (change)="onFilterFieldChanged(filterBy.value)">
     <option selected value="name">Name</option>
