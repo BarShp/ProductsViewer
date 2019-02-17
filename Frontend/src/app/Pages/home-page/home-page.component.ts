@@ -100,24 +100,4 @@ export class HomePageComponent implements OnInit {
         this.autocomplete = autocomplete;
       })
   }
-
-  // private loadNextPage() {
-  //   const getProductsSubscription = this.productsService.getProducts(this.page, sortBy: this.sortBy)
-  //     .subscribe((products: Product[]) => {
-  //       getProductsSubscription.unsubscribe();
-  //       this.products.push(...products);
-  //       // WHY SORTING IN THE CLIENT?: 
-  //       //  when using pagination, even if [PageX] is sorted, [PageX+1] might contain values unsorted to [PageX]
-  //       //  E.g - [Page1 Sorted] - 1,3,5
-  //       //        [Page2 Sorted] - 2,4,6
-  //       //        Sorting the data in the DB after pagination will only result in [1,3,5,2,4,6], which isn't really sorted.
-  //       //        If you still want to use pagination AND sorting, you must sort the whole DB before going through it's "pages".
-  //       //        Moreover - Using INFINITE SCROLL AND SORT, causes weird behaviour - 
-  //       //          while scrolling down, the data gets sorted, thus allowing new data to go to the top of the page (which you already went through).
-  //       //          It may be fixed only by sorting the DB in advance (which isn't a great practice when talking about large DBs)
-  //       //  I still created the sort in the DB because I was told it needs to be done, but it's redundant if it's sorted here too.
-  //       // this.products.sort((a, b) => (a[this.sortBy] > b[this.sortBy]) ? 1 : (a[this.sortBy] < b[this.sortBy]) ? -1 : 0)
-  //       this.page++;
-  //     })
-  // }
 }
