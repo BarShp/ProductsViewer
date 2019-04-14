@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
-import { AuthService } from '../../Services/auth.service';
 import { ProductsService } from '../../Services/products-service.service';
 
 @Component({
@@ -19,24 +17,14 @@ export class HomePageComponent implements OnInit {
   private autocomplete: string[] = [];
   private products: Product[] = [];
 
-  constructor(private router: Router, private authService: AuthService, private productsService: ProductsService) {
-    this.authService.isLoggedIn().subscribe((loggedIn) => {
-      if (!loggedIn) {
-        this.router.navigate(['/Login']);
-      }
-    }, (error) => {
-      console.log('error', error);
-    });
+  constructor(private productsService: ProductsService) {
+
   }
 
   ngOnInit() {
     this.resetProducts();
     this.loadNextPage();
     this.loadAutocomplete();
-  }
-
-  onLoggedOut() {
-    this.router.navigate(['/Login']);
   }
 
   onSearch() {

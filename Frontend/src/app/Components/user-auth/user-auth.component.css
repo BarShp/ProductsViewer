@@ -1,11 +1,21 @@
 #container{
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    background: white;
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
 }
 
-#container > *:not(:last-child){
+#userDetails{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#userDetails > *:not(:last-child){
     margin-right: 0.275rem;
 }

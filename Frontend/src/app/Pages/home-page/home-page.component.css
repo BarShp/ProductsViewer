@@ -15,7 +15,7 @@
 
 #productsGridContainer{
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
 }
 
 #productsGrid{
